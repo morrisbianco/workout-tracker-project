@@ -52,7 +52,7 @@ function populateChart(data) {
       plugins: {
         title: {
           display: true,
-          text: 'Time Spent Working Out',
+          text: 'Time Spent Working Out (Last 7 days)',
         },
       },
       scales: {
@@ -95,7 +95,7 @@ function populateChart(data) {
       plugins: {
         title: {
           display: true,
-          text: 'Pounds Lifted',
+          text: 'Pounds Lifted (Last 7 days)',
         },
       },
       scales: {

@@ -68,7 +68,7 @@ app.post("/api/workouts", ({ body }, res) => {
 // Loads in the workouts for the stats page
 app.get("/api/workouts/range", (req, res) => {
   const workoutDuration = { totalDuration: { $sum: "$exercises.duration" }};
-  db.Workout.aggregate([{ $set: workoutDuration }])
+  db.Workout.aggregate([{ $set: workoutDuration }, { $sort: { 'day': -1 } }, { $limit: 7 }])
   .then(dbWorkout => {
     res.json(dbWorkout);
     })
